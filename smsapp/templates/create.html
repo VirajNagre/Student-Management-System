@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>SMS App by Viraj Nagre</title>
+<style>*{font-family:Arial;}
+body{background-color: #fffefc;
+color: black;}
+
+a{
+font-size:0.9em;
+}
+
+table{
+margin:30px;
+}
+td{
+background: #fff;
+padding:10px;
+}
+
+td:hover{
+//background:#86f0e9;
+padding:10px;
+box-shadow: 10px 10px 10px #f5c93b -inset;
+}
+
+
+th:hover{
+background:#f5c93b;
+}
+
+th{
+background:lightyellow;
+padding:10px;
+}
+
+input {
+padding:10px;
+border: 1px solid #bbb
+}
+
+input [type=text]{
+  width: 100%;
+}
+
+
+</style>
+</head>
+<body>
+<center>
+
+<h1>Create Page</h1>
+<a href="{% url 'home' %}">Home<a/>
+
+<form method="POST">
+{% csrf_token %}
+<table>
+{{ fm.as_table }}
+</table>
+<input type="submit" />
+</form>
+<h1>{{ msg }}</h1>
+</center>
+</body>
+<html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>SMS App by Viraj Nagre</title>
+<style>*{font-family:Arial;}
+body{background-color: #fffefc;
+color: black;}
+
+a{
+font-size:0.9em;
+}
+
+table{
+margin:30px;
+}
+td{
+background: #fff;
+padding:10px;
+}
+
+td:hover{
+background: #fcfcfc;
+padding:10px;
+box-shadow: 10px 10px 10px #f5c93b -inset;
+}
+
+th:hover{
+background:#f5c93b;
+}
+
+th{
+background:lightyellow;
+padding:10px;
+}
+
+</style>
+</head>
+<body><center>
+<h1>Student Data Manager<h1>
+
+<h1>Home Page</h1>
+<a href="{% url 'create' %}">Create Record<a/>
+
+<table style="width:50%;">
+	<tr > 
+		<th>No</th> 
+		<th>Name</th> 
+		<th>Marks</th> 
+		<th>Delete</th> 
+	</tr>
+{%  for d in data %}
+	<tr> 
+		<td>{{ d.rno }}</td> 
+		<td>{{ d.name }}</td> 
+		<td>{{ d.marks }}</td> 
+		<td><a href="{%  url 'remove' id=d.rno %}"
+	onclick="return confirm('Sure?')">Delete</a></td> 
+	</tr>
+{% endfor %}
+
+</table
+</center>
+</body>
+<html>
